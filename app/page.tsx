@@ -1,8 +1,5 @@
 import ProductList from "./product-layout";
-
-export const runtime = "edge";
 export const dynamic = "force-dynamic";
-
 
 async function getProducts() {
   const res = await fetch(`https://normal-nextjs.vercel.app/api/products`, {

@@ -34,7 +34,7 @@ export default function ProductList({ products }: Props) {
     <Box sx={{ display: "flex" }}>
       <AppBar position="fixed" sx={{ zIndex: 1201 }}>
         <Toolbar>
-          <Typography variant="h6">Product App (Edge Demo)</Typography>
+          <Typography variant="h6">Product App</Typography>
         </Toolbar>
       </AppBar>
 
