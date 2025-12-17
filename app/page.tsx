@@ -26,14 +26,16 @@ interface Product {
   thumbnail: string;
 }
 
-export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
+async function getProducts() {
+  const res = await fetch("https://normal-nextjs.vercel.app/api/products", {
+    cache: "no-store",
+  });
+  return res.json();
+}
 
-  useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=30")
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products));
-  }, []);
+
+export default async function Home() {
+   const { products } = await getProducts();
 
   return (
     <Box sx={{ display: "flex" }}>
